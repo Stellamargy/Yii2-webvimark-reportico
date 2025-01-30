@@ -1,8 +1,10 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
+use \webvimark\modules\UserManagement\models\User;
+use backend\models\VehicleQuery;
 
 /**
  * This is the model class for table "vehicle".

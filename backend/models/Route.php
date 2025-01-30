@@ -1,8 +1,12 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
+
+
 
 use Yii;
+use backend\models\RouteQuery;
+use backend\models\Vehicle;
 
 /**
  * This is the model class for table "route".
