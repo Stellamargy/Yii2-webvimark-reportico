@@ -5,12 +5,12 @@ use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 ?>
-<header class="m-0">
+<header class="mb-5">
     <?php
     NavBar::begin([
 
         'options' => [
-            'class' => 'navbar navbar-expand-lg fixed-top nav-container mb-0',
+            'class' => 'navbar navbar-expand-lg fixed-top nav-container mb-5',
         ],
 
     ]);

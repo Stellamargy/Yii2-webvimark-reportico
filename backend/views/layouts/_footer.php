@@ -1,7 +1,7 @@
 <?php
 use yii\web\View ;
 ?>
-<footer class="bg-color text-white py-4 mt-5 ">
+<footer class="bg-color text-white py-4 mt-5 fixed-bottom ">
     <div class="container">
         <div class="row">
             <div class="col-md-4">

@@ -43,7 +43,7 @@ AppAsset::register($this);
 </main>
 
 </div>
-<?php echo $this->render('_footer')?>
+<!-- <?php echo $this->render('_footer')?> -->
 
 
 
