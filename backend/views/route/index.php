@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="route-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="fs-2"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Route', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Route', ['create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'route_name',
             'route_description:ntext',
             'distance',

@@ -2,52 +2,52 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+$this->title = 'Driver and Vehicle Management';
 ?>
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
+        <h1 class="display-4">Welcome to Driver and Vehicle Management</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">Manage your fleet of vehicles, assign drivers, and track routes effortlessly.</p>
+        <?php if (Yii::$app->user->can('readvehicle')): ?>
 
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+            <p><a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/vehicle/index']) ?>">Manage Drivers</a></p>
 
-    <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
 
     </div>
+<?php endif; ?>
+
+</div>
+
+<div class="body-content">
+
+    <div class="row">
+        <?php if (Yii::$app->user->can('readvehicle')): ?>
+            <div class="col-lg-6">
+                <h2>Vehicle Management</h2>
+
+                <p>Efficiently manage your fleet of vehicles. Add, edit, or remove vehicles from your system with ease. Keep track of vehicle details, maintenance, and assignment status.</p>
+
+                <p><a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/vehicle/index']) ?>">Manage Drivers</a></p>
+
+            </div>
+        <?php endif; ?>
+
+        <?php if (Yii::$app->user->can('readRoute')): ?>
+            <div class="col-lg-6">
+                <h2>Route Assignment</h2>
+
+                <p>Assign routes to vehicles and drivers, ensuring optimal scheduling. Monitor the status of routes, and track deliveries in real-time for increased efficiency.</p>
+
+                <p><a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/route/index']) ?>">Manage Drivers</a></p>
+
+            </div>
+        <?php endif; ?>
+
+
+    </div>
+
+</div>
 </div>

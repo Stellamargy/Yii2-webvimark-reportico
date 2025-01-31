@@ -28,27 +28,26 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap h-100 d-flex flex-column">
-<?php echo $this->render('_header')?>
+    <?= $this->render('_header') ?>
 
-
-
-
-<main role="main" class="d-flex flex-grow-1 main-container ">
-<?php echo $this->render('_sidebar')?>
-    <div class="content container">
-        
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</main>
-
+    <main role="main" class="d-flex  main-container">
+        <?= $this->render('_sidebar') ?>
+        <div class="content container">
+            
+            <!-- Flash Messages -->
+            <?= Alert::widget() ?>
+            
+            
+            
+            <?= $content ?>
+        </div>
+    </main>
 </div>
-<!-- <?php echo $this->render('_footer')?> -->
 
-
+<!-- Footer -->
+<!-- <?= $this->render('_footer') ?> -->
 
 <?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage();
-
+<?php $this->endPage(); ?>

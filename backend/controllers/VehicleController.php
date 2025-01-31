@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use Yii;
 use backend\models\Vehicle;
 use backend\models\VehileSearch;
 use yii\web\Controller;
@@ -50,14 +51,23 @@ class VehicleController extends Controller
     /**
      * Displays a single Vehicle model.
      * @param int $id ID
-     * @return string
+     * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
     {
+        $vehicle = $this->findModel($id);
+
+
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $vehicle,
         ]);
+    }
+    public function actionVehicle()
+    {
+        
+        return $this->render('unassigned');
     }
 
     /**
@@ -69,12 +79,8 @@ class VehicleController extends Controller
     {
         $model = new Vehicle();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [

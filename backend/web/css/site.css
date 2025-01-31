@@ -33,8 +33,8 @@ header{
     border-radius: 4px; /* Rounded corners */
     padding: 60px 20px; /* Inner padding */
     /* margin-bottom: 20px; Space below the aside */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
-}
+    /* transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+} */
 
 /* Optional hover effect */
 .aside:hover {

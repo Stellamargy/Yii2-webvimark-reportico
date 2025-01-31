@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var backend\models\Vehicle $model */
 
-$this->title = $model->id;
+$this->title = $model->registration_number;
 $this->params['breadcrumbs'][] = ['label' => 'Vehicles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -37,8 +37,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'color',
             'type',
             'capacity',
-            'route_id',
-            'user_id',
+            // 'route_id',
+            // 'user_id',
+            [
+                'label' => 'Route Name',
+                'value' => $model->route ? $model->route->route_name : 'N/A', // assuming 'name' is the route's name field
+            ],
+            [
+                'label' => 'Driver Username',
+                'value' => $model->user ? $model->user->username : 'N/A', // assuming 'username' is the user's username field
+            ],
         ],
     ]) ?>
 

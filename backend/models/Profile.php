@@ -4,7 +4,6 @@ namespace backend\models;
 
 use Yii;
 use \webvimark\modules\UserManagement\models\User;
-use backend\models\ProfileQuery;
 
 /**
  * This is the model class for table "profile".
@@ -13,7 +12,6 @@ use backend\models\ProfileQuery;
  * @property int $user_id
  * @property string $first_name
  * @property string $last_name
- * @property string $email
  * @property string|null $phone_number
  * @property string|null $address
  * @property string $role
@@ -41,14 +39,12 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'first_name', 'last_name', 'email', 'role', 'created_at', 'updated_at'], 'required'],
+            [['user_id', 'first_name', 'last_name', 'role', 'created_at', 'updated_at'], 'required'],
             [['user_id', 'vehicle_assigned', 'created_at', 'updated_at'], 'integer'],
             [['address'], 'string'],
             [['first_name', 'last_name', 'admin_area_of_responsibility'], 'string', 'max' => 100],
-            [['email'], 'string', 'max' => 255],
             [['phone_number', 'role'], 'string', 'max' => 20],
             [['driver_license_number'], 'string', 'max' => 50],
-            [['email'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -63,7 +59,6 @@ class Profile extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
             'first_name' => 'First Name',
             'last_name' => 'Last Name',
-            'email' => 'Email',
             'phone_number' => 'Phone Number',
             'address' => 'Address',
             'role' => 'Role',

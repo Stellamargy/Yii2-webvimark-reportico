@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="vehicle-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="fs-2"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Vehicle', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Vehicle', ['create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -30,16 +30,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'registration_number',
             'make',
             'model',
-            'year',
+            // 'year',
             //'color',
             //'type',
             //'capacity',
-            //'route_id',
-            //'user_id',
+            // 'route_id',
+            [
+                'attribute' => 'user_id',
+                'label' => 'Driver',
+                'value' => function ($model) {
+                    return $model->user ? $model->user->username : "Unassigned";
+                }
+            ],
+            
+            [
+                'attribute' => 'route_id',
+                'label' => 'Route Name',
+                'value' => function ($model) {
+                    return $model->route ?  $model->route->route_name : "Route Unassigned";
+                }
+            ],
+            'user_id',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Vehicle $model, $key, $index, $column) {

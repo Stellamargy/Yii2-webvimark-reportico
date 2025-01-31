@@ -33,15 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'first_name',
             'last_name',
-            'email:email',
+            
             'phone_number',
             'address:ntext',
             'role',
             'driver_license_number',
             'vehicle_assigned',
             'admin_area_of_responsibility',
-            'created_at',
-            'updated_at',
+            
         ],
     ]) ?>
 
