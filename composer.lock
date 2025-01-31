@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28f3740962b5a8d691dc17f5dbed513f",
+    "content-hash": "1cea29385febdb706ee3c41c1a8c5843",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -756,6 +756,48 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
+        },
+        {
+            "name": "reportico/yii2-reportico",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reportico-web/yii2-reportico.git",
+                "reference": "ebebcb2ff78de6db91a964de9980bc7f984a1457"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reportico-web/yii2-reportico/zipball/ebebcb2ff78de6db91a964de9980bc7f984a1457",
+                "reference": "ebebcb2ff78de6db91a964de9980bc7f984a1457",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "reportico\\reportico\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Deed",
+                    "email": "info@reportico.org"
+                }
+            ],
+            "description": "Reportico",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/reportico-web/yii2-reportico/issues",
+                "source": "https://github.com/reportico-web/yii2-reportico/tree/master"
+            },
+            "time": "2021-12-12T14:18:16+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -6162,7 +6204,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "reportico/yii2-reportico": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
